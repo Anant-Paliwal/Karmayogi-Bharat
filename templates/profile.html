@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile - Karmayogi Bharat{% endblock %}
+
+{% block header_title %}My Learning Dashboard{% endblock %}
+{% block header_subtitle %}Track your progress and manage your learning journey{% endblock %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card bg-dark shadow-lg border-primary mb-4" data-aos="fade-right">
+            <div class="card-header bg-gradient">
+                <h4 class="mb-0"><i class="fas fa-user-circle me-2"></i>Profile Information</h4>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <div class="avatar-circle mx-auto">
+                        <span class="avatar-text">{{ user.full_name[0] if user.full_name else user.username[0] }}</span>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">{{ user.full_name }}</h5>
+                <p class="card-text text-muted">@{{ user.username }}</p>
+                
+                <ul class="list-group list-group-flush bg-dark">
+                    <li class="list-group-item bg-dark">
+                        <i class="fas fa-briefcase me-2"></i> <strong>Designation:</strong> {{ user.designation }}
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <i class="fas fa-building me-2"></i> <strong>Ministry:</strong> {{ user.ministry }}
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <i class="fas fa-envelope me-2"></i> <strong>Email:</strong> {{ user.email }}
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <i class="fas fa-calendar-alt me-2"></i> <strong>Joined:</strong> {{ user.created_at.strftime('%d %B, %Y') if user.created_at else 'N/A' }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card bg-dark shadow-lg border-primary mb-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="card-header bg-gradient">
+                <h4 class="mb-0"><i class="fas fa-chart-line me-2"></i>Learning Stats</h4>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-6 mb-3">
+                        <h2 class="text-primary mb-0">{{ courses|length }}</h2>
+                        <p class="text-muted">Enrolled Courses</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <h2 class="text-success mb-0">{{ courses|selectattr('completed', 'equalto', true)|list|length }}</h2>
+                        <p class="text-muted">Completed</p>
+                    </div>
+                </div>
+                
+                <div class="progress mb-3" style="height: 10px;">
+                    {% set overall_progress = (courses|sum(attribute='progress') / courses|length) if courses|length > 0 else 0 %}
+                    <div class="progress-bar bg-info" role="progressbar" style="width: {{ overall_progress }}%;" 
+                        aria-valuenow="{{ overall_progress }}" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+                <p class="text-center text-muted">{{ '%.1f'|format(overall_progress) }}% Overall Progress</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8">
+        <div class="card bg-dark shadow-lg border-primary" data-aos="fade-left">
+            <div class="card-header bg-gradient">
+                <h4 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>My Courses</h4>
+            </div>
+            <div class="card-body">
+                {% if courses %}
+                    <div class="list-group">
+                        {% for item in courses %}
+                            <div class="list-group-item bg-dark border-secondary mb-3 p-0">
+                                <div class="card border-0 bg-dark">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title mb-1">
+                                                <a href="{{ url_for('course_detail', course_id=item.course.id) }}" class="text-decoration-none">
+                                                    {{ item.course.title }}
+                                                </a>
+                                            </h5>
+                                            <span class="badge {{ 'bg-success' if item.completed else 'bg-info' }}">
+                                                {{ 'Completed' if item.completed else 'In Progress' }}
+                                            </span>
+                                        </div>
+                                        <p class="text-muted small mb-2">{{ item.course.provider }} • {{ item.course.level }} • {{ item.course.duration_hours }} hours</p>
+                                        
+                                        <div class="progress mb-2" style="height: 6px;">
+                                            <div class="progress-bar {{ 'bg-success' if item.completed else 'bg-info' }}" 
+                                                 role="progressbar" style="width: {{ item.progress }}%;" 
+                                                 aria-valuenow="{{ item.progress }}" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <small class="text-muted">{{ '%.1f'|format(item.progress) }}% complete</small>
+                                            <small class="text-muted">Enrolled: {{ item.enrolled_at.strftime('%d %b %Y') if item.enrolled_at else 'N/A' }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-book-open fa-4x mb-3 text-muted"></i>
+                        <h5>You haven't enrolled in any courses yet</h5>
+                        <p class="text-muted">Get started by exploring course recommendations based on your role</p>
+                        <a href="{{ url_for('index') }}" class="btn btn-primary mt-2">
+                            <i class="fas fa-search me-1"></i> Find Courses
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<style>
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    background-color: var(--bs-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar-text {
+    font-size: 42px;
+    color: white;
+    text-transform: uppercase;
+}
+</style>
+{% endblock %}

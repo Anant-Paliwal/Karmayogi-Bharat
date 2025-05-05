@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+
+{% block title %}Karmayogi Bharat - Personalized Learning Path Recommender{% endblock %}
+
+{% block header_title %}Learning Path Recommender{% endblock %}
+{% block header_subtitle %}Discover tailored learning journeys based on your role in government service{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-7" data-aos="fade-up">
+        <div class="card shadow">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-compass me-2"></i>
+                    Find Your Learning Path
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="lead mb-4">
+                    Enter your details below to get personalized course recommendations tailored to your role.
+                </p>
+                
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    {{ error }}
+                </div>
+                {% endif %}
+                
+                <form id="recommendation-form" action="/recommendations" method="get">
+                    <div class="mb-4">
+                        <label for="designation" class="form-label">
+                            <i class="fas fa-user-tie me-2"></i>Designation
+                        </label>
+                        <select class="form-select form-select-lg" id="designation" name="designation" required>
+                            <option value="" selected disabled>Select your designation</option>
+                            {% for designation in designations %}
+                            <option value="{{ designation }}">{{ designation }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="ministry" class="form-label">
+                            <i class="fas fa-building me-2"></i>Ministry/Department
+                        </label>
+                        <select class="form-select form-select-lg" id="ministry" name="ministry" required>
+                            <option value="" selected disabled>Select your ministry/department</option>
+                            {% for ministry in ministries %}
+                            <option value="{{ ministry }}">{{ ministry }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-route me-2"></i>
+                            Generate Learning Path
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="card shadow h-100">
+            <div class="card-header">
+                <h3 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>
+                    About Karmayogi Bharat
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Karmayogi Bharat aims to create personalized learning journeys for government officials to enhance their 
+                    professional capabilities and improve public service delivery.
+                </p>
+                <p>
+                    Our AI-powered recommendation system maps your role to relevant behavioral, functional, and domain 
+                    competencies, then suggests a tailored sequence of courses to help you build those competencies.
+                </p>
+                
+                <div class="feature-boxes mt-4">
+                    <div class="feature-box d-flex align-items-start mb-4">
+                        <div class="feature-icon me-3">
+                            <div class="icon-wrapper bg-primary">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Role-based Recommendations</h5>
+                            <p>Tailored to your specific designation and ministry</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box d-flex align-items-start mb-4">
+                        <div class="feature-icon me-3">
+                            <div class="icon-wrapper bg-secondary">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Competency-driven Learning</h5>
+                            <p>Focuses on behavioral, functional, and domain competencies needed for your role</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box d-flex align-items-start">
+                        <div class="feature-icon me-3">
+                            <div class="icon-wrapper bg-accent">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Structured Learning Paths</h5>
+                            <p>Logical sequence of courses for progressive skill development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5" data-aos="fade-up" data-aos-delay="200">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header">
+                <h3 class="mb-0">
+                    <i class="fas fa-chart-line me-2"></i>
+                    How It Works
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                        <img src="{{ url_for('static', filename='img/recommendation-system.svg') }}" class="img-fluid rounded shadow" alt="AI Recommendation System">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="process-steps">
+                            <div class="process-step d-flex align-items-start mb-4">
+                                <div class="step-number me-3">1</div>
+                                <div>
+                                    <h5>Role Identification</h5>
+                                    <p>Select your designation and ministry to identify your role in government service</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step d-flex align-items-start mb-4">
+                                <div class="step-number me-3">2</div>
+                                <div>
+                                    <h5>Competency Mapping</h5>
+                                    <p>Our system maps your role to the necessary behavioral, functional, and domain competencies</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step d-flex align-items-start mb-4">
+                                <div class="step-number me-3">3</div>
+                                <div>
+                                    <h5>Course Selection</h5>
+                                    <p>The AI engine selects the most relevant courses that address your competency needs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step d-flex align-items-start">
+                                <div class="step-number me-3">4</div>
+                                <div>
+                                    <h5>Learning Path Creation</h5>
+                                    <p>Courses are arranged in a logical progression to create your personalized learning journey</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Feature boxes */
+    .feature-icon .icon-wrapper {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.25rem;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-normal);
+    }
+    
+    .feature-box:hover .icon-wrapper {
+        transform: scale(1.1);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .bg-primary {
+        background: var(--gradient-primary);
+    }
+    
+    .bg-secondary {
+        background: var(--gradient-secondary);
+    }
+    
+    .bg-accent {
+        background: linear-gradient(45deg, var(--accent-color), #0ca678);
+    }
+    
+    /* Process steps */
+    .process-steps .step-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gradient-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .process-step {
+        transition: var(--transition-normal);
+    }
+    
+    .process-step:hover {
+        transform: translateX(5px);
+    }
+    
+    .process-step:hover .step-number {
+        box-shadow: var(--shadow-md);
+    }
+</style>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navbar scroll effect
+        const navbar = document.querySelector('.main-navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Form submission with validation
+        const form = document.getElementById('recommendation-form');
+        form.addEventListener('submit', function(event) {
+            const designation = document.getElementById('designation').value;
+            const ministry = document.getElementById('ministry').value;
+            
+            if (!designation || !ministry) {
+                event.preventDefault();
+                alert('Please select both designation and ministry');
+            } else {
+                // Add loading animation
+                const button = form.querySelector('button[type="submit"]');
+                button.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Generating...';
+                button.disabled = true;
+            }
+        });
+        
+        // Enhance select inputs with better UI
+        const selects = document.querySelectorAll('.form-select');
+        selects.forEach(select => {
+            select.addEventListener('change', function() {
+                if (this.value) {
+                    this.classList.add('is-valid');
+                } else {
+                    this.classList.remove('is-valid');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
