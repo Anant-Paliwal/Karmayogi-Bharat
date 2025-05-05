@@ -1,0 +1,107 @@
+[
+  {
+    "id": "B001",
+    "code": "PPLMAN",
+    "name": "People Management",
+    "description": "Ability to manage teams and delegate tasks effectively",
+    "type": "Behavioral"
+  },
+  {
+    "id": "B002",
+    "code": "COMMUN",
+    "name": "Communication Skills",
+    "description": "Ability to communicate clearly and effectively",
+    "type": "Behavioral"
+  },
+  {
+    "id": "B003",
+    "code": "LEADER",
+    "name": "Leadership",
+    "description": "Ability to lead and motivate teams",
+    "type": "Behavioral"
+  },
+  {
+    "id": "B004",
+    "code": "INTGRT",
+    "name": "Integrity and Ethics",
+    "description": "Adherence to ethical principles and standards",
+    "type": "Behavioral"
+  },
+  {
+    "id": "B005",
+    "code": "COLLAB",
+    "name": "Collaboration",
+    "description": "Ability to work effectively with others",
+    "type": "Behavioral"
+  },
+  {
+    "id": "F001",
+    "code": "POLICY",
+    "name": "Policy Making",
+    "description": "Ability to formulate and implement policies",
+    "type": "Functional"
+  },
+  {
+    "id": "F002",
+    "code": "PRGMGT",
+    "name": "Program Management",
+    "description": "Ability to plan and execute programs effectively",
+    "type": "Functional"
+  },
+  {
+    "id": "F003",
+    "code": "BUDGCT",
+    "name": "Budgeting and Control",
+    "description": "Skills in financial planning and management",
+    "type": "Functional"
+  },
+  {
+    "id": "F004",
+    "code": "DATANA",
+    "name": "Data Analysis",
+    "description": "Ability to analyze and interpret data",
+    "type": "Functional"
+  },
+  {
+    "id": "F005",
+    "code": "DGTSKL",
+    "name": "Digital Skills",
+    "description": "Proficiency in using digital tools and platforms",
+    "type": "Functional"
+  },
+  {
+    "id": "D001",
+    "code": "ITGOV",
+    "name": "IT Governance",
+    "description": "Knowledge of IT governance frameworks and practices",
+    "type": "Domain"
+  },
+  {
+    "id": "D002",
+    "code": "PUBLW",
+    "name": "Public Law",
+    "description": "Knowledge of constitutional and administrative law",
+    "type": "Domain"
+  },
+  {
+    "id": "D003",
+    "code": "PBLHLTH",
+    "name": "Public Health",
+    "description": "Understanding of public health issues and policies",
+    "type": "Domain"
+  },
+  {
+    "id": "D004",
+    "code": "INFRSEC",
+    "name": "Information Security",
+    "description": "Knowledge of cybersecurity principles and practices",
+    "type": "Domain"
+  },
+  {
+    "id": "D005",
+    "code": "EDUCAT",
+    "name": "Education Policy",
+    "description": "Understanding of education sector and policies",
+    "type": "Domain"
+  }
+]

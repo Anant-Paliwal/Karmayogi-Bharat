@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "designation": "Director",
+    "ministry": "Ministry of Electronics and IT",
+    "competency_ids": ["B001", "B003", "F001", "F002", "D001", "D004"]
+  },
+  {
+    "id": 2,
+    "designation": "Deputy Secretary",
+    "ministry": "Ministry of Electronics and IT",
+    "competency_ids": ["B002", "B005", "F003", "F005", "D001", "D004"]
+  },
+  {
+    "id": 3,
+    "designation": "Joint Secretary",
+    "ministry": "Ministry of Finance",
+    "competency_ids": ["B001", "B003", "F001", "F003", "D002"]
+  },
+  {
+    "id": 4,
+    "designation": "Under Secretary",
+    "ministry": "Ministry of Finance",
+    "competency_ids": ["B002", "B004", "F003", "F004", "D002"]
+  },
+  {
+    "id": 5,
+    "designation": "Section Officer",
+    "ministry": "Ministry of Home Affairs",
+    "competency_ids": ["B002", "B005", "F004", "F005", "D002"]
+  },
+  {
+    "id": 6,
+    "designation": "Director",
+    "ministry": "Ministry of Home Affairs",
+    "competency_ids": ["B001", "B003", "F001", "F002", "D002"]
+  },
+  {
+    "id": 7,
+    "designation": "Joint Secretary",
+    "ministry": "Ministry of Defence",
+    "competency_ids": ["B001", "B003", "B004", "F001", "F002", "D002"]
+  },
+  {
+    "id": 8,
+    "designation": "Director",
+    "ministry": "Ministry of Education",
+    "competency_ids": ["B001", "B003", "F001", "F002", "D005"]
+  },
+  {
+    "id": 9,
+    "designation": "Deputy Secretary",
+    "ministry": "Ministry of Education",
+    "competency_ids": ["B002", "B005", "F002", "F005", "D005"]
+  },
+  {
+    "id": 10,
+    "designation": "Section Officer",
+    "ministry": "Ministry of Finance",
+    "competency_ids": ["B004", "B005", "F003", "F004", "D002"]
+  }
+]

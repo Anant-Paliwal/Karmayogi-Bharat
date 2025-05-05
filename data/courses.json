@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "title": "Effective Leadership in Government",
+    "description": "Learn key leadership skills for government officials",
+    "provider": "iGOT Karmayogi",
+    "domain": "Leadership",
+    "competency_ids": ["B001", "B003"],
+    "level": "Intermediate",
+    "duration_hours": 8.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 2,
+    "title": "Communication Skills for Public Officials",
+    "description": "Enhance your communication abilities in a government setting",
+    "provider": "iGOT Karmayogi",
+    "domain": "Communication",
+    "competency_ids": ["B002"],
+    "level": "Beginner",
+    "duration_hours": 4.0,
+    "course_type": "Interactive"
+  },
+  {
+    "id": 3,
+    "title": "Policy Formulation and Implementation",
+    "description": "Comprehensive guide to creating and implementing effective policies",
+    "provider": "LBSNAA",
+    "domain": "Policy",
+    "competency_ids": ["F001"],
+    "level": "Advanced",
+    "duration_hours": 12.0,
+    "course_type": "Blended"
+  },
+  {
+    "id": 4,
+    "title": "Government Program Management",
+    "description": "Learn to manage large-scale government programs effectively",
+    "provider": "iGOT Karmayogi",
+    "domain": "Management",
+    "competency_ids": ["F002"],
+    "level": "Intermediate",
+    "duration_hours": 10.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 5,
+    "title": "Budget Planning and Financial Management",
+    "description": "Master the art of government budgeting and financial control",
+    "provider": "Ministry of Finance",
+    "domain": "Finance",
+    "competency_ids": ["F003"],
+    "level": "Intermediate",
+    "duration_hours": 8.0,
+    "course_type": "Interactive"
+  },
+  {
+    "id": 6,
+    "title": "Data Analytics for Decision Making",
+    "description": "Use data to make better policy decisions",
+    "provider": "iGOT Karmayogi",
+    "domain": "Data Science",
+    "competency_ids": ["F004"],
+    "level": "Beginner",
+    "duration_hours": 6.0,
+    "course_type": "Interactive"
+  },
+  {
+    "id": 7,
+    "title": "Digital Skills for Government Officials",
+    "description": "Essential digital tools and platforms for modern governance",
+    "provider": "NIELIT",
+    "domain": "Digital",
+    "competency_ids": ["F005"],
+    "level": "Beginner",
+    "duration_hours": 4.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 8,
+    "title": "IT Governance and Management",
+    "description": "Framework for managing IT resources in government",
+    "provider": "Ministry of Electronics and IT",
+    "domain": "IT",
+    "competency_ids": ["D001"],
+    "level": "Advanced",
+    "duration_hours": 10.0,
+    "course_type": "Blended"
+  },
+  {
+    "id": 9,
+    "title": "Administrative Law for Practitioners",
+    "description": "Practical guide to administrative law for government officials",
+    "provider": "LBSNAA",
+    "domain": "Law",
+    "competency_ids": ["D002"],
+    "level": "Intermediate",
+    "duration_hours": 8.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 10,
+    "title": "Cybersecurity Fundamentals",
+    "description": "Essential cybersecurity principles for government systems",
+    "provider": "Ministry of Electronics and IT",
+    "domain": "Security",
+    "competency_ids": ["D004"],
+    "level": "Beginner",
+    "duration_hours": 6.0,
+    "course_type": "Interactive"
+  },
+  {
+    "id": 11,
+    "title": "Team Collaboration and Management",
+    "description": "Techniques for fostering team collaboration in government offices",
+    "provider": "iGOT Karmayogi",
+    "domain": "Management",
+    "competency_ids": ["B001", "B005"],
+    "level": "Intermediate",
+    "duration_hours": 5.0,
+    "course_type": "Interactive"
+  },
+  {
+    "id": 12,
+    "title": "Ethics in Public Service",
+    "description": "Navigating ethical dilemmas in government roles",
+    "provider": "LBSNAA",
+    "domain": "Ethics",
+    "competency_ids": ["B004"],
+    "level": "Beginner",
+    "duration_hours": 4.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 13,
+    "title": "Advanced Cybersecurity for Government",
+    "description": "Protecting critical government infrastructure from cyber threats",
+    "provider": "CERT-In",
+    "domain": "Security",
+    "competency_ids": ["D004"],
+    "level": "Advanced",
+    "duration_hours": 12.0,
+    "course_type": "Blended"
+  },
+  {
+    "id": 14,
+    "title": "Education Policy Implementation",
+    "description": "Strategies for implementing education policies effectively",
+    "provider": "Ministry of Education",
+    "domain": "Education",
+    "competency_ids": ["D005", "F001"],
+    "level": "Intermediate",
+    "duration_hours": 8.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 15,
+    "title": "Digital Transformation in Government",
+    "description": "Leading digital initiatives in government organizations",
+    "provider": "iGOT Karmayogi",
+    "domain": "Digital",
+    "competency_ids": ["F005", "D001"],
+    "level": "Advanced",
+    "duration_hours": 10.0,
+    "course_type": "Blended"
+  },
+  {
+    "id": 16,
+    "title": "Public Speaking for Government Officials",
+    "description": "Master the art of public speaking and presentation",
+    "provider": "iGOT Karmayogi",
+    "domain": "Communication",
+    "competency_ids": ["B002"],
+    "level": "Intermediate",
+    "duration_hours": 6.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 17,
+    "title": "Leadership in Crisis Management",
+    "description": "Leading teams effectively during crisis situations",
+    "provider": "LBSNAA",
+    "domain": "Leadership",
+    "competency_ids": ["B001", "B003"],
+    "level": "Advanced",
+    "duration_hours": 8.0,
+    "course_type": "Interactive"
+  },
+  {
+    "id": 18,
+    "title": "Government Data Management",
+    "description": "Best practices for managing government data",
+    "provider": "Ministry of Electronics and IT",
+    "domain": "Data",
+    "competency_ids": ["F004", "D001"],
+    "level": "Intermediate",
+    "duration_hours": 7.0,
+    "course_type": "Video"
+  },
+  {
+    "id": 19,
+    "title": "Strategic Planning for Public Sector",
+    "description": "Developing and implementing strategic plans in government",
+    "provider": "iGOT Karmayogi",
+    "domain": "Planning",
+    "competency_ids": ["F001", "F002"],
+    "level": "Advanced",
+    "duration_hours": 10.0,
+    "course_type": "Blended"
+  },
+  {
+    "id": 20,
+    "title": "Building Collaborative Teams",
+    "description": "Creating and nurturing effective teams in government",
+    "provider": "iGOT Karmayogi",
+    "domain": "Management",
+    "competency_ids": ["B001", "B005"],
+    "level": "Beginner",
+    "duration_hours": 5.0,
+    "course_type": "Interactive"
+  }
+]
